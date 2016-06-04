@@ -5,7 +5,7 @@ import signal
 import sys
 import time
 
-from random import randin
+from random import randint
 from threading import Thread
 
 def functionDataActuator(status):
