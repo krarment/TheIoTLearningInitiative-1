@@ -1,12 +1,12 @@
 #!/usr/bin/python
 
 import paho.mqtt.client as paho
-import psutil
 import pywapi
 import signal
 import sys
 import time
 
+from random import randin
 from threading import Thread
 
 def functionApiWeather():
@@ -32,8 +32,7 @@ def functionDataActuatorMqttSubscribe():
         pass
 
 def functionDataSensor():
-    netdata = psutil.net_io_counters()
-    data = netdata.packets_sent + netdata.packets_recv
+    data = randint(0,100)
     return data
 
 def functionDataSensorMqttOnPublish(mosq, obj, msg):
