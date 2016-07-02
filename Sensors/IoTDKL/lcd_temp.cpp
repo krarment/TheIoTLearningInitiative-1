@@ -30,21 +30,21 @@ int main(int argc, char **argv)
 	lcd->setColor(127, 255, 127);
 	lcd->write("Temperature:");
 	std::stringstream ss;
-    while (!doWork) 
-    {
 
-        temperature = barometer->getTemperature(true);
-        pressure    = barometer->getPressure(false);
-        altitude    = barometer->getAltitude();
-        sealevel    = barometer->getSealevelPressure();
-        ss.str(std::string());
-        ss<<temperature;
-        lcd->setCursor(1,2);
-    	lcd->write(ss.str());
-        usleep (500000);
-    }
-
-    delete lcd;
-    delete barometer;
-    return 0;     
+	while (!doWork) 
+	{
+		temperature = barometer->getTemperature(true);
+		pressure    = barometer->getPressure(false);
+		altitude    = barometer->getAltitude();
+		sealevel    = barometer->getSealevelPressure();
+		ss.str(std::string());
+		ss<<temperature;
+		lcd->setCursor(1,2);
+		lcd->write(ss.str());
+		usleep (500000);
+	}
+	
+	delete lcd;
+	delete barometer;
+	return 0;     
 }
